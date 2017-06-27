@@ -27,7 +27,7 @@
         <modelFile modelName="CurrencyMapper"/>
       </modelsDirectory>
       <modulesDirectory enabled="false"/>
-      <servicesDirectory enabled="false"/>
+      <servicesDirectory enabled="true"/>
       <viewsDirectory>
         <viewScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Index">

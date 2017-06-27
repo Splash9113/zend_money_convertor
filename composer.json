@@ -30,7 +30,8 @@
     "require-dev": {
         "phpunit/phpunit": "3.7.*",
         "phpunit/dbunit": "1.3.*",
-        "robmorgan/phinx": "*"
+        "robmorgan/phinx": "*",
+        "zfcampus/zf-composer-autoloading": "1"
     },
     "archive": {
         "exclude": ["/demos", "/documentation", "/tests"]

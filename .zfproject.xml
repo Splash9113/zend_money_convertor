@@ -17,6 +17,7 @@
       </controllersDirectory>
       <formsDirectory>
         <formFile formName="Converter"/>
+        <formFile formName="Currency"/>
       </formsDirectory>
       <layoutsDirectory enabled="false"/>
       <modelsDirectory>
@@ -27,7 +28,6 @@
         <modelFile modelName="CurrencyMapper"/>
       </modelsDirectory>
       <modulesDirectory enabled="false"/>
-      <servicesDirectory enabled="true"/>
       <viewsDirectory>
         <viewScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Index">

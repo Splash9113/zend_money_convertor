@@ -3,6 +3,7 @@
 class Application_Service_Currency
 {
     protected $currencyMapper;
+    protected $ratesService;
     protected $cache;
     protected $from;
     protected $to;
@@ -20,6 +21,7 @@ class Application_Service_Currency
 
     public function __construct()
     {
+        $this->ratesService = new Application_Service_Rates();
         $this->currencyMapper = new Application_Model_CurrencyMapper();
         $this->cache = Zend_Cache::factory('Core', 'File', $this->frontendOptions, $this->backendOptions);
     }
@@ -58,10 +60,7 @@ class Application_Service_Currency
     protected function loadRates()
     {
         if (!$rates = $this->cache->load('rates')) { // From cache
-            $xml = simplexml_load_string(file_get_contents('http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml'));
-            foreach ($xml->Cube->Cube->Cube as $rate) {
-                $this->rates[] = ((array)$rate)['@attributes'];
-            }
+            $this->rates = $this->ratesService->loadRates();
             $this->cache->save($this->rates, 'rates');
         } else {
             $this->rates = $rates;
